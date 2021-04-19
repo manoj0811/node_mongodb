@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery AJAX Submit Form</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#submit").on("click", function(event){
+        $.post( "http://localhost:3000/api/register", 
+            {
+                "name":"manoj",
+                "email":"manoj123@gmail.com",
+                "phone":"123456789",
+                "password":"asdf1234"
+            },function(data){
+                console.log(data)
+
+            });
+ 
+        // $.post(actionUrl, formValues, function(data){
+        //     // Display the returned data in browser
+        //     $("#result").html(data);
+        // });
+    });
+});
+</script>
+</head>
+<body>
+    
+        
+        <input type="submit" value="submit" id="submit">
+    <div id="result"></div>
+</body>
+</html>
